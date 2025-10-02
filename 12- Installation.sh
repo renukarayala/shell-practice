@@ -8,6 +8,6 @@ if [ $USERID -ne 0 ]; then
 else
     echo "working with root"  
 fi
-dnf uninstall nodejs npm -y
+dnf remove nodejs npm -y
 
 
