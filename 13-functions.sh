@@ -5,6 +5,8 @@ USERID=$(id -u)
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run this script with root privelege"
     exit 1 # failure is other than 0
+else
+    echo "working with root"    
 fi
 
 VALIDATE(){ # functions receive inputs through args just like shell script args
@@ -24,3 +26,6 @@ VALIDATE $? "Nginx"
 
 dnf install python3 -y
 VALIDATE $? "python3"
+
+dnf install python4 -y
+VALIDATE $? "python4"
