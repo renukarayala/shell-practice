@@ -13,8 +13,8 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 # LOG_FILE defines the path where logs will be written
 #SCRIPT_NAME extracts the script’s name by stripping off the extension (e.g., myscript.sh → myscript).
 
-LOG_FILE defines the path where logs will be written:
-/var/log/shell-script/<script_name>.log
+# LOG_FILE defines the path where logs will be written:
+# /var/log/shell-script/<script_name>.log
 
 mkdir -p $LOGS_FOLDER  # -p if folder is not it will create otherwise keep silent
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE #tee -a both prints it to the terminal and appends it to the log file.
