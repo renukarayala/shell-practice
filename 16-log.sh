@@ -11,10 +11,7 @@ SCRIPT_NAME=$( echo $0 | cut -d "." -f1 ) # extracts the script’s name by stri
    #cut splits the string using . (dot) as the delimiter (-d ".").-f1 tells it to return the first part (field) before the dot.
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log 
 # LOG_FILE defines the path where logs will be written
-
- 
-
-SCRIPT_NAME extracts the script’s name by stripping off the extension (e.g., myscript.sh → myscript).
+#SCRIPT_NAME extracts the script’s name by stripping off the extension (e.g., myscript.sh → myscript).
 
 LOG_FILE defines the path where logs will be written:
 /var/log/shell-script/<script_name>.log
