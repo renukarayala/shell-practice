@@ -1,14 +1,16 @@
 #!/bin/bash
 
-echo "Please enter number"
-read -p "Enter a number: " NUMBER
+check_prime() 
 
-if [ $NUMBER ]; then
-    echo "Given number is a Prime number"
-else
-    echo "Given number is NOT a Prime number"
-fi
+{
 
+  NUMBER=$1
 
+  if [ $NUMBER -lt 100 ]
+echo "$NUMBER is a Prime Number"
+  else
+    echo "$NUMBER is NOT a Prime Number"
+  fi
+}
 
 
