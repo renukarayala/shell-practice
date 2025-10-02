@@ -3,7 +3,7 @@
  USERID=$(id -u)  #The output is stored in variable USERID
 R="\e[31m"
 G="\e[32m"
-Y="\e[35m"
+Y="\e[33m"
 N="\e[0m"
 
 if [ $USERID -ne 0 ]; then  # If the user is not root (-ne 0), print an error and exit with code 1
