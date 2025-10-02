@@ -8,6 +8,12 @@ if [ $USERID -ne 0 ]; then
 else
     echo "working with root"  
 fi
-dnf remove nodejs npm -y
+dnf install mysql -y
 
+if [ $? -ne 0 ]; then
+    echo "ERROR:: Installing MySQL is failure"
+    exit 1
+else
+    echo "Installing MySQL is SUCCESS"
+fi
 
