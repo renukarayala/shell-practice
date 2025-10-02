@@ -7,7 +7,7 @@ Y="\e[33m"
 N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"   # LOGS_FOLDER is where logs will be stored.
-SCRIPT_NAME=$( echo $0 | cut -d "." -f1 ) # extracts the script’s name by stripping off the extension
+SCRIPT_NAME=$( echo $0 | cut -d "." -f1 ) # $0 script name 16-log
    #cut splits the string using . (dot) as the delimiter (-d ".").-f1 tells it to return the first part (field) before the dot.
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log 
 # LOG_FILE defines the path where logs will be written
@@ -16,7 +16,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log" # /var/log/shell-script/16-logs.log
 LOG_FILE defines the path where logs will be written:
 /var/log/shell-script/<script_name>.log
 
-mkdir -p $LOGS_FOLDER  # -p makes parent directories
+mkdir -p $LOGS_FOLDER  # -p if folder is not it will create otherwise keep silent
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE #tee -a both prints it to the terminal and appends it to the log file.
 
 if [ $USERID -ne 0 ]; then
@@ -55,5 +55,10 @@ if [ $? -ne 0 ]; then
     dnf install python3 -y &>>$LOG_FILE
     VALIDATE $? "python3"
 else
-    echo -e "Python3 already exist ... $Y SKIPPING $N" | tee -a $LOG_FILE
+    echo -e "Python3 already exist ... $Y SKIPPING $N" | tee -a $LOG_FILE # tee command useful for print in logfile also
 fi
+
+
+# $1 -> success
+# $2 -> failure
+# $& -> success/failure
