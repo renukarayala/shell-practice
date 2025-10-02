@@ -8,7 +8,7 @@ if [ $(($NUMBER % 2)) -nq 0 ]; then
  else
    echo "Given number is not prime number"  
 
-elseif [ $NUMBER -lt 10 ]; then
+elif [ $NUMBER -lt 10 ]; then
     echo "Given number $NUMBER is less than 10"
 elif [ $NUMBER -eq 10 ]; then
     echo "Given number $NUMBER is equal to 10"
