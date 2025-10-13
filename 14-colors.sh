@@ -5,7 +5,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-echo -e "$G Hello World $Y"
+echo -e "$Y Hello World $R"
 echo "Check this color"
 
 # -e: enables escape sequences in echo
